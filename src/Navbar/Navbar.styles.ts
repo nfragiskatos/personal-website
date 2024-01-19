@@ -23,17 +23,16 @@ interface PageProps {
 
 export const Page = styled.li<PageProps>`
   padding: 1rem;
-  ${({ isActive, theme }) =>
-    isActive &&
-    `
-        background-color: ${theme.colors.tertiary};
-        color: ${theme.colors.onTertiary};
-    `}
+`;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
-    color: ${({ theme }) => theme.colors.onTertiary};
-  }
+export const NavTitle = styled.div`
+  color: inherit;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  text-decoration: none;
+  cursor: pointer;
 `;
 
 export const NavLink = styled.div`
@@ -44,4 +43,23 @@ export const NavLink = styled.div`
   padding: 0.25rem;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    height: 0.25rem;
+    background: ${({ theme }) => theme.colors.tertiary};
+    width: 100%;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+
+  &:hover:before {
+    transform: scaleX(1);
+  }
 `;

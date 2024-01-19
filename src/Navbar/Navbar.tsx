@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ThemeSwitcher from "../utils/components/ThemeSwitcher";
-import { Nav, NavLink, Page, PagesList } from "./Navbar.styles";
+import { Nav, NavLink, NavTitle, Page, PagesList } from "./Navbar.styles";
 
 enum PAGE {
   Home,
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <NavLink
+      <NavTitle
         className="display-large"
         onClick={() => {
           setActivePage(PAGE.Home);
@@ -26,7 +26,7 @@ const Navbar = () => {
         }}
       >
         Nicholas Fragiskatos
-      </NavLink>
+      </NavTitle>
       <ThemeSwitcher />
       <PagesList>
         <Page
