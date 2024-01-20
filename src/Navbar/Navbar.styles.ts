@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+interface NavProps {
+  isSticky?: boolean;
+}
+
+export const Nav = styled.nav<NavProps>`
   background-color: ${({ theme }) => theme.colors.primaryContainer};
   color: ${({ theme }) => theme.colors.onPrimaryContainer};
   display: flex;
@@ -9,7 +13,20 @@ export const Nav = styled.nav`
   align-items: stretch;
   gap: 2rem;
   padding: 0 0 0 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+
+  ${({ isSticky }) =>
+    isSticky &&
+    `
+        top: -107px;
+    `}
 `;
+
+// position: sticky;
+// top: 0;
 
 export const PagesList = styled.ul`
   padding: 0;

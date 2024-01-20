@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ThemeSwitcher from "../utils/components/ThemeSwitcher";
 import { routes } from "../utils/routes";
@@ -6,8 +7,29 @@ import { Nav, NavLink, NavTitle, Page, PagesList } from "./Navbar.styles";
 const Navbar = () => {
   const location = useLocation();
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  const prevScrollPosition = useRef(window.scrollY);
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      const currentScrollPosition = window.scrollY;
+
+      setIsSticky(prevScrollPosition.current < currentScrollPosition);
+      prevScrollPosition.current = currentScrollPosition;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", stickNavbar);
+    };
+  }, []);
+
   return (
-    <Nav>
+    <Nav isSticky={isSticky}>
       <NavTitle
         to={routes.home.path}
         className="display-large"
