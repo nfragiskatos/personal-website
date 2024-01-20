@@ -1,25 +1,16 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import ThemeSwitcher from "../utils/components/ThemeSwitcher";
+import { routes } from "../utils/routes";
 import { Nav, NavLink, NavTitle, Page, PagesList } from "./Navbar.styles";
 
-enum PAGE {
-  Home,
-  Blog,
-  PersonProjects,
-}
-
 const Navbar = () => {
-  const [activePage, setActivePage] = useState<PAGE>(PAGE.Home);
-
-  console.log(activePage === PAGE.Home);
+  const location = useLocation();
 
   return (
     <Nav>
       <NavTitle
+        to={routes.home.path}
         className="display-large"
-        onClick={() => {
-          setActivePage(PAGE.Home);
-        }}
         style={{
           marginTop: "1rem",
           marginBottom: "1rem",
@@ -29,29 +20,32 @@ const Navbar = () => {
       </NavTitle>
       <ThemeSwitcher />
       <PagesList>
-        <Page
-          isActive={activePage === PAGE.Home}
-          onClick={() => {
-            setActivePage(PAGE.Home);
-          }}
-        >
-          <NavLink className="title-large">Home</NavLink>
+        <Page>
+          <NavLink
+            to={routes.home.path}
+            className="title-large"
+            isActive={location.pathname === routes.home.path}
+          >
+            {routes.home.title}
+          </NavLink>
         </Page>
-        <Page
-          isActive={activePage === PAGE.Blog}
-          onClick={() => {
-            setActivePage(PAGE.Blog);
-          }}
-        >
-          <NavLink className="title-large">Blog</NavLink>
+        <Page>
+          <NavLink
+            to={routes.blog.path}
+            className="title-large"
+            isActive={location.pathname === routes.blog.path}
+          >
+            {routes.blog.title}
+          </NavLink>
         </Page>
-        <Page
-          isActive={activePage === PAGE.PersonProjects}
-          onClick={() => {
-            setActivePage(PAGE.PersonProjects);
-          }}
-        >
-          <NavLink className="title-large">Personal Projects</NavLink>
+        <Page>
+          <NavLink
+            to={routes.projects.path}
+            className="title-large"
+            isActive={location.pathname === routes.projects.path}
+          >
+            {routes.projects.title}
+          </NavLink>
         </Page>
       </PagesList>
     </Nav>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
@@ -25,7 +26,7 @@ export const Page = styled.li<PageProps>`
   padding: 1rem;
 `;
 
-export const NavTitle = styled.div`
+export const NavTitle = styled(Link)`
   color: inherit;
   height: 100%;
   display: flex;
@@ -35,7 +36,11 @@ export const NavTitle = styled.div`
   cursor: pointer;
 `;
 
-export const NavLink = styled.div`
+interface NavLinkProps {
+  isActive?: boolean;
+}
+
+export const NavLink = styled(Link)<NavLinkProps>`
   color: inherit;
   height: 100%;
   display: flex;
@@ -57,6 +62,12 @@ export const NavLink = styled.div`
     transition: all 0.2s ease-in-out;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
+
+    ${({ isActive }) =>
+      isActive &&
+      `
+    transform: scaleX(1);
+    `}
   }
 
   &:hover:before {

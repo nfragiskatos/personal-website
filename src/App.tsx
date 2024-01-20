@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
+import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
+import Blog from "./pages/blog/components/Blog";
+import Home from "./pages/home/Home";
 import "./theme.css";
 import { ITheme, base, dark, light } from "./themes";
 
@@ -33,7 +37,16 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="surface">
           <Navbar />
-          <p
+
+          <div id="router-container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<Blog />} />
+            </Routes>
+          </div>
+          {/* <Hero /> */}
+          <Footer />
+          {/* <p
             className="on-surface-text"
             style={{
               fontSize: "2em",
@@ -43,7 +56,7 @@ function App() {
             doloremque laudantium sed minima voluptatibus minus nostrum, dolore
             laborum amet debitis? Qui nobis magnam dicta recusandae delectus
             perferendis iste eius provident?
-          </p>
+          </p> */}
         </div>
       </ThemeProvider>
     </ThemePreferenceContext.Provider>
