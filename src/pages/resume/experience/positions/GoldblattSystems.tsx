@@ -1,4 +1,4 @@
-import { JobDetails } from "../ProfessionalExperience.styles";
+import { JobDetails } from "../Experience.styles";
 import Job from "../job/Job";
 
 const GoldblattSystems = () => {
