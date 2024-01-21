@@ -67,6 +67,7 @@ export const NavLink = styled(Link)<NavLinkProps>`
   text-decoration: none;
   cursor: pointer;
   position: relative;
+  text-transform: uppercase;
 
   &:before {
     content: "";

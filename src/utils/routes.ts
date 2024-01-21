@@ -7,6 +7,7 @@ interface MyRoutes {
   home: MyRoute;
   blog: MyRoute;
   projects: MyRoute;
+  resume: MyRoute;
 }
 
 export const routes: MyRoutes = {
@@ -20,6 +21,10 @@ export const routes: MyRoutes = {
   },
   projects: {
     path: "/projects",
-    title: "personal Projects",
+    title: "projects",
+  },
+  resume: {
+    path: "/resume",
+    title: "resume",
   },
 };

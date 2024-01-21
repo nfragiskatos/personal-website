@@ -86,6 +86,15 @@ const Navbar = () => {
             {routes.projects.title}
           </NavLink>
         </Page>
+        <Page>
+          <NavLink
+            to={routes.resume.path}
+            className="title-large"
+            isActive={location.pathname === routes.resume.path}
+          >
+            {routes.resume.title}
+          </NavLink>
+        </Page>
       </PagesList>
     </Nav>
   );

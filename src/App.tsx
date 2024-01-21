@@ -6,8 +6,11 @@ import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
 import Blog from "./pages/blog/components/Blog";
 import Home from "./pages/home/Home";
+import Projects from "./pages/projects/Projects";
+import Resume from "./pages/resume/Resume";
 import "./theme.css";
 import { ITheme, base, dark, light } from "./themes";
+import { routes } from "./utils/routes";
 
 export interface ThemeContextType {
   currentTheme: string;
@@ -40,8 +43,10 @@ function App() {
 
           <div id="router-container">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path={routes.home.path} element={<Home />} />
+              <Route path={routes.blog.path} element={<Blog />} />
+              <Route path={routes.projects.path} element={<Projects />} />
+              <Route path={routes.resume.path} element={<Resume />} />
             </Routes>
           </div>
           {/* <Hero /> */}
