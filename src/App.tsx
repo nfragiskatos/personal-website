@@ -9,7 +9,7 @@ import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects";
 import Resume from "./pages/resume/Resume";
 import "./theme.css";
-import { ITheme, base, dark, light } from "./themes";
+import { ITheme, base, dark, device, light } from "./themes";
 import { routes } from "./utils/routes";
 
 export interface ThemeContextType {
@@ -33,6 +33,7 @@ function App() {
   const theme = {
     ...base,
     colors: themesMap[currentTheme as keyof ITheme],
+    device,
   };
 
   return (

@@ -20,13 +20,13 @@ export const StyledThemeSwitcher = styled.div`
     background-color: ${({ theme }) => theme.colors.onTertiary};
     z-index: 0;
     left: 0;
-    transform: translateX(0.5rem);
+    transform: translateX(0.49rem);
     transition: var(--default-transition);
 
     ${({ theme }) =>
       theme.colors.theme === "dark" &&
       `
-        transform: translateX(3.8rem);
+        transform: translateX(3.75rem);
     `}
   }
 `;
