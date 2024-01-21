@@ -18,8 +18,8 @@ const ThemeSwitcher = () => {
     <Wrapper>
       <StyledThemeSwitcher onClick={switchTheme}>
         <SunIcon
-          width="24px"
-          height="24px"
+          width="2rem"
+          height="2rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +48,8 @@ const ThemeSwitcher = () => {
           </g>
         </SunIcon>
         <MoonIcon
-          width="24px"
-          height="24px"
+          width="2rem"
+          height="2rem"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

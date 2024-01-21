@@ -2,14 +2,25 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ThemeSwitcher from "../utils/components/ThemeSwitcher";
 import { routes } from "../utils/routes";
-import { Nav, NavLink, NavTitle, Page, PagesList } from "./Navbar.styles";
+import {
+  Nav,
+  NavLink,
+  NavTitle,
+  Page,
+  PagesList,
+  ProfilePicture,
+  ProfilePictureWrapper,
+  TitleProfilePictureWrapper,
+} from "./Navbar.styles";
 
 const Navbar = () => {
   const location = useLocation();
-
   const [isSticky, setIsSticky] = useState(false);
-
   const prevScrollPosition = useRef(window.scrollY);
+  const [height, setHeight] = useState(0.0);
+  const ref = useRef<HTMLElement>(null);
+
+  console.log(`Height = ${height}`);
 
   const stickNavbar = () => {
     if (window !== undefined) {
@@ -22,6 +33,7 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", stickNavbar);
+    setHeight(ref.current?.clientHeight ?? 0);
 
     return () => {
       window.removeEventListener("scroll", stickNavbar);
@@ -29,17 +41,22 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Nav isSticky={isSticky}>
-      <NavTitle
-        to={routes.home.path}
-        className="display-large"
-        style={{
-          marginTop: "1rem",
-          marginBottom: "1rem",
-        }}
-      >
-        Nicholas Fragiskatos
-      </NavTitle>
+    <Nav isSticky={isSticky} navHeight={height} ref={ref}>
+      <TitleProfilePictureWrapper>
+        <ProfilePictureWrapper>
+          <ProfilePicture src="/profile-picture.jpg" />
+        </ProfilePictureWrapper>
+        <NavTitle
+          to={routes.home.path}
+          // className="display-large"
+          style={{
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
+          Nicholas Fragiskatos
+        </NavTitle>
+      </TitleProfilePictureWrapper>
       <ThemeSwitcher />
       <PagesList>
         <Page>
