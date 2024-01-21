@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledThemeSwitcher = styled.div`
-  background: ${({ theme }) => theme.colors.inversePrimary};
+  background: ${({ theme }) => theme.colors.primary};
   border-radius: 50px;
   display: flex;
   align-items: center;
