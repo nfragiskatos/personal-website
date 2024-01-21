@@ -1,5 +1,6 @@
 import { Title } from "../Resume.styles";
 import { Content, Wrapper } from "./ProfessionalExperience.styles";
+import DieboldNixdorf from "./positions/DieboldNixdorf";
 import GoldblattSystems from "./positions/GoldblattSystems";
 import IBM from "./positions/IBM";
 
@@ -10,6 +11,7 @@ const ProfessionalExperience = () => {
       <Content>
         <GoldblattSystems />
         <IBM />
+        <DieboldNixdorf />
       </Content>
     </Wrapper>
   );
