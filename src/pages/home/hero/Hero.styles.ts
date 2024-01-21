@@ -53,6 +53,10 @@ export const GithubIcon = styled(FaGithub)`
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;
 
 export const LinkedInIcon = styled(FaLinkedin)`
@@ -60,6 +64,10 @@ export const LinkedInIcon = styled(FaLinkedin)`
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;
 
 export const BlogIcon = styled(FaBlog)`
@@ -67,6 +75,10 @@ export const BlogIcon = styled(FaBlog)`
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;
 
 export const HeroContent = styled.div`
