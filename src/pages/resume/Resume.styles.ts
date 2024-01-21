@@ -5,7 +5,6 @@ export const Main = styled.main`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
   justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.colors.surface};
@@ -15,5 +14,8 @@ export const Title = styled.h1`
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
-  color: ${({ theme }) => theme.colors.onSurface};
+  color: ${({ theme }) => theme.colors.primary};
+  text-transform: capitalize;
+  text-transform: uppercase;
+  margin: 2rem;
 `;

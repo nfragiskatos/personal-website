@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.surfaceVariant};
 `;
 
 export const Content = styled.div`
@@ -41,7 +44,7 @@ export const Chip = styled.div<ChipProps>`
   margin-right: 1rem;
   font-size: 1.3rem;
   background: ${({ theme, backgroundColor }) =>
-    backgroundColor || theme.colors.primary};
+    backgroundColor || theme.colors.secondary};
   color: ${({ theme, color }) => color || theme.colors.onPrimary};
   border-radius: 5px;
   font-weight: 600;
