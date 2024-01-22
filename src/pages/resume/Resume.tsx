@@ -1,4 +1,5 @@
 import { Main } from "./Resume.styles";
+import Education from "./education/Education";
 import AdditionalExperience from "./experience/AdditionalExperience";
 import ProfessionalExperience from "./experience/ProfessionalExperience";
 import SkillsAndKnowledge from "./skillsandknowledge/SkillsAndKnowledge";
@@ -8,6 +9,7 @@ const Resume = () => {
       <SkillsAndKnowledge />
       <ProfessionalExperience />
       <AdditionalExperience />
+      <Education />
     </Main>
   );
 };
