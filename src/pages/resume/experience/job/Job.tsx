@@ -13,7 +13,7 @@ import { PropsWithChildren } from "react";
 interface JobProps {
   title: string;
   startDate: string;
-  endDate: string;
+  endDate?: string | undefined;
   company: string;
   location: string;
 }
@@ -31,7 +31,9 @@ const Job = ({
       <Content>
         <Line>
           <Title>{title}</Title>
-          <Date>{`${startDate} - ${endDate}`}</Date>
+          <Date>{`${startDate} ${
+            endDate && endDate?.length !== 0 ? `- ${endDate}` : ""
+          }`}</Date>
         </Line>
         <Line>
           <Company>{company}</Company>

@@ -4,12 +4,13 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 100rem;
 `;
 
 export const Content = styled.div`
-  width: 100%;
+  // width: 100%;
+  max-width: 100rem;
   //   margin: 1rem;
   //   display: grid;
   //   grid-template-columns: 1fr 2fr;
