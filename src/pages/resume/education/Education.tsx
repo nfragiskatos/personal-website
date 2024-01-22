@@ -2,7 +2,7 @@ import { Title } from "../Resume.styles";
 import { Content, Wrapper } from "./Education.styles";
 import School from "./school/School";
 
-const ProfessionalExperience = () => {
+const Education = () => {
   return (
     <Wrapper>
       <Title>Education</Title>
@@ -24,4 +24,4 @@ const ProfessionalExperience = () => {
   );
 };
 
-export default ProfessionalExperience;
+export default Education;
