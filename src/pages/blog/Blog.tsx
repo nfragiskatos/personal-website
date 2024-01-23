@@ -1,21 +1,15 @@
+import { Main } from "./Blog.styles";
 import BlogPost from "./BlogPost";
 
 const Blog = () => {
   return (
-    <main className="background">
-      <button
-        onClick={() => {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }}
-      >
-        TOGGLE
-      </button>
+    <Main>
       <h1>I'm on the blog page</h1>
       <BlogPost />
       <BlogPost />
       <BlogPost />
       <BlogPost />
-    </main>
+    </Main>
   );
 };
 

@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import "./App.css";
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
-import Blog from "./pages/blog/components/Blog";
+import Blog from "./pages/blog/Blog";
 import Home from "./pages/home/Home";
 import Projects from "./pages/projects/Projects";
 import Resume from "./pages/resume/Resume";
