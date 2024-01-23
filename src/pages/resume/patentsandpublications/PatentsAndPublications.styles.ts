@@ -6,6 +6,8 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
+  background: ${({ theme }) => theme.colors.surfaceVariant};
+  padding-bottom: 2rem;
 `;
 
 export const Content = styled.div`

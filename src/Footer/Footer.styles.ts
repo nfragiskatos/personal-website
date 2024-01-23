@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const FooterWrapper = styled.footer`
   width: 100%;
   min-height: 300px;
-  background-color: ${({ theme }) => theme.colors.surfaceVariant};
+  background-color: ${({ theme }) => theme.colors.primaryContainer};
   display: flex;
   justify-content: center;
   align-items: center;

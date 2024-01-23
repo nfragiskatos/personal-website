@@ -6,6 +6,7 @@ export const Line = styled.div`
   align-items: end;
   width: 100%;
   margin: 1rem;
+  color: ${({ theme }) => theme.colors.onSurface};
 `;
 
 export const Publisher = styled.div`
