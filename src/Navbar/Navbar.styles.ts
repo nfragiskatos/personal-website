@@ -18,6 +18,7 @@ export const Nav = styled.nav<NavProps>`
   top: 0;
   width: 100%;
   transition: top 0.3s;
+  z-index: 1;
 
   ${({ isSticky, navHeight }) =>
     isSticky &&

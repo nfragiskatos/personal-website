@@ -20,8 +20,6 @@ const Navbar = () => {
   const [height, setHeight] = useState(0.0);
   const ref = useRef<HTMLElement>(null);
 
-  console.log(`Height = ${height}`);
-
   const stickNavbar = () => {
     if (window !== undefined) {
       const currentScrollPosition = window.scrollY;

@@ -33,7 +33,7 @@ export const Date = styled.div`
 `;
 
 export const Company = styled.div`
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: capitalize;
   font-weight: bolder;
 `;

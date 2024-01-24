@@ -17,10 +17,12 @@ export interface ThemeContextType {
   setCurrentTheme: (theme: string) => void;
 }
 
-const themesMap = {
+const themesMap: { light: ITheme; dark: ITheme } = {
   light,
   dark,
 };
+
+type themeMapType = keyof typeof themesMap;
 
 export const ThemePreferenceContext = React.createContext<ThemeContextType>({
   currentTheme: "light",
@@ -32,17 +34,30 @@ function App() {
 
   const theme = {
     ...base,
-    colors: themesMap[currentTheme as keyof ITheme],
+    colors: themesMap[currentTheme as themeMapType],
     device,
   };
 
   return (
     <ThemePreferenceContext.Provider value={{ currentTheme, setCurrentTheme }}>
       <ThemeProvider theme={theme}>
-        <div className="surface">
+        <div
+          style={{
+            background: theme.colors.surface,
+            height: "100%",
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Navbar />
 
-          <div id="router-container">
+          <div
+            id="router-container"
+            style={{
+              flex: "1 1 auto",
+            }}
+          >
             <Routes>
               <Route path={routes.home.path} element={<Home />} />
               <Route path={routes.blog.path} element={<Blog />} />
@@ -50,19 +65,7 @@ function App() {
               <Route path={routes.resume.path} element={<Resume />} />
             </Routes>
           </div>
-          {/* <Hero /> */}
           <Footer />
-          {/* <p
-            className="on-surface-text"
-            style={{
-              fontSize: "2em",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-            doloremque laudantium sed minima voluptatibus minus nostrum, dolore
-            laborum amet debitis? Qui nobis magnam dicta recusandae delectus
-            perferendis iste eius provident?
-          </p> */}
         </div>
       </ThemeProvider>
     </ThemePreferenceContext.Provider>
