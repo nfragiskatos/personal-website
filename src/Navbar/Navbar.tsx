@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import ThemeSwitcher from "../utils/components/ThemeSwitcher";
 import { routes } from "../utils/routes";
 import {
+  CloseMenu,
+  HamburgerMenu,
   Nav,
   NavLink,
   NavTitle,
@@ -18,6 +20,7 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const prevScrollPosition = useRef(window.scrollY);
   const [height, setHeight] = useState(0.0);
+  const [isHidden, setIsHidden] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
   const stickNavbar = () => {
@@ -27,6 +30,10 @@ const Navbar = () => {
       setIsSticky(prevScrollPosition.current < currentScrollPosition);
       prevScrollPosition.current = currentScrollPosition;
     }
+  };
+
+  const toggleMenuVisibility = () => {
+    setIsHidden(!isHidden);
   };
 
   useEffect(() => {
@@ -40,13 +47,18 @@ const Navbar = () => {
 
   return (
     <Nav isSticky={isSticky} navHeight={height} ref={ref}>
+      {isHidden ? (
+        <HamburgerMenu onClick={toggleMenuVisibility} />
+      ) : (
+        <CloseMenu onClick={toggleMenuVisibility} />
+      )}
+
       <TitleProfilePictureWrapper>
         <ProfilePictureWrapper>
           <ProfilePicture src="/profile-picture.jpg" />
         </ProfilePictureWrapper>
         <NavTitle
           to={routes.home.path}
-          // className="display-large"
           style={{
             marginTop: "1rem",
             marginBottom: "1rem",
@@ -55,8 +67,8 @@ const Navbar = () => {
           Nicholas Fragiskatos
         </NavTitle>
       </TitleProfilePictureWrapper>
-      <ThemeSwitcher />
-      <PagesList>
+      {/* <ThemeSwitcher /> */}
+      <PagesList isHidden={isHidden}>
         <Page>
           <NavLink
             to={routes.home.path}
@@ -92,6 +104,9 @@ const Navbar = () => {
           >
             {routes.resume.title}
           </NavLink>
+        </Page>
+        <Page>
+          <ThemeSwitcher />
         </Page>
       </PagesList>
     </Nav>

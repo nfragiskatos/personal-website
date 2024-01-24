@@ -1,3 +1,5 @@
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -13,7 +15,7 @@ export const Nav = styled.nav<NavProps>`
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   width: 100%;
@@ -27,11 +29,35 @@ export const Nav = styled.nav<NavProps>`
     `}
 `;
 
-export const PagesList = styled.ul`
+interface PageListProps {
+  isHidden: boolean;
+}
+
+export const PagesList = styled.ul<PageListProps>`
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 50%;
+    padding: min(20vh, 5rem) 2rem;
+    background: ${({ theme }) => theme.colors.primary}B5;
+    color: ${({ theme }) => theme.colors.onPrimary};
+    z-index: 999;
+    ${({ isHidden }) =>
+      isHidden &&
+      `
+      transform: translateX(100%);
+    
+    `}
+  }
+
+  @supports (backdrop-filter: blur(2rem)) {
+    backdrop-filter: blur(1rem);
+  }
 `;
 
 interface PageProps {
@@ -40,9 +66,11 @@ interface PageProps {
 
 export const Page = styled.li<PageProps>`
   padding: 1rem;
+  width: max-content;
 `;
 
 export const NavTitle = styled(Link)`
+  transition: font-size 0.3s;
   color: inherit;
   height: 100%;
   display: flex;
@@ -53,6 +81,10 @@ export const NavTitle = styled(Link)`
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 1.8rem;
+
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 interface NavLinkProps {
@@ -69,6 +101,7 @@ export const NavLink = styled(Link)<NavLinkProps>`
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
+  font-weight: 600;
 
   &:before {
     content: "";
@@ -120,5 +153,37 @@ export const TitleProfilePictureWrapper = styled.div`
 
   &:hover {
     color: ${({ theme }) => theme.colors.tertiary};
+  }
+`;
+
+export const HamburgerMenu = styled(GiHamburgerMenu)`
+  display: none;
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  color: ${({ theme }) => theme.colors.tertiary};
+  cursor: pointer;
+
+  @media (max-width: 1100px) {
+    display: block;
+  }
+`;
+
+export const CloseMenu = styled(IoClose)`
+  display: none;
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  color: ${({ theme }) => theme.colors.tertiary};
+  cursor: pointer;
+
+  @media (max-width: 1100px) {
+    display: block;
   }
 `;
