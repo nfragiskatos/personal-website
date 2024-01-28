@@ -44,7 +44,7 @@ export const SocialLinks = styled.aside`
     bottom: 1rem;
     left: 50%;
     top: auto;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 100%);
   }
 `;
 
