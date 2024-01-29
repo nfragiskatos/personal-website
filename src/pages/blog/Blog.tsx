@@ -1,6 +1,13 @@
 import { gql, useQuery } from "@apollo/client";
 import { FetchPublicationData } from "../../hashnode/interfaces";
-import { Content, Main } from "./Blog.styles";
+import {
+  Content,
+  HashnodeLink,
+  HeroDetails,
+  HeroSection,
+  HeroTitle,
+  Main,
+} from "./Blog.styles";
 import BlogPost from "./post/BlogPost";
 
 const BLOG_QUERY = gql`
@@ -40,6 +47,24 @@ const Blog = () => {
 
   return (
     <Main>
+      <HeroSection>
+        <HeroTitle>Just keep learning</HeroTitle>
+        <HeroDetails>
+          As someone who is a big believer in continuous learning, I take
+          advantage of many free online learning resources. In hopes of teaching
+          others and giving back to the online learning community, I also spend
+          time writing educational articles about various software engineering
+          topics on my blog.
+          <br />
+          The full blog is hosted{" "}
+          <HashnodeLink
+            href="https://blog.nicholasfragiskatos.dev/"
+            target="_blank"
+          >
+            here on Hashnode.
+          </HashnodeLink>
+        </HeroDetails>
+      </HeroSection>
       <Content>
         {/* <p>{JSON.stringify(data)}</p>
       <h1>I'm on the blog page</h1> */}

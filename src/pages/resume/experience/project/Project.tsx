@@ -21,7 +21,9 @@ const Project = ({
         <Line>
           <Title>{project}</Title>
           <ProjectLink>
-            <Link href={link}>{icon}</Link>
+            <Link href={link} target="_blank">
+              {icon}
+            </Link>
           </ProjectLink>
         </Line>
         {children}
