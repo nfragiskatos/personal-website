@@ -1,4 +1,5 @@
 import {
+  BlogIcon,
   FooterWrapper,
   GithubIcon,
   LinkedInIcon,
@@ -22,6 +23,13 @@ const Footer = () => {
           rel="noreferrer"
         >
           <LinkedInIcon />
+        </a>
+        <a
+          href="https://blog.nicholasfragiskatos.dev/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BlogIcon />
         </a>
       </SocialMediaWrapper>
     </FooterWrapper>

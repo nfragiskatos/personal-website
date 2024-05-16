@@ -60,6 +60,7 @@ export const HeroSection = styled.section`
   padding-bottom: 5rem;
   padding-left: 4rem;
   padding-right: 4rem;
+  margin-bottom: 2rem;
 `;
 
 export const HeroDetails = styled.div`

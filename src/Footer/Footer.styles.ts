@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaBlog, FaGithub, FaLinkedin } from "react-icons/fa6";
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
@@ -22,6 +22,10 @@ export const GithubIcon = styled(FaGithub)`
   height: 72px;
   width: 72px;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;
 
 export const LinkedInIcon = styled(FaLinkedin)`
@@ -29,4 +33,19 @@ export const LinkedInIcon = styled(FaLinkedin)`
   height: 72px;
   width: 72px;
   cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
+`;
+
+export const BlogIcon = styled(FaBlog)`
+  color: ${({ theme }) => theme.colors.onSurfaceVariant};
+  height: 72px;
+  width: 72px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;
