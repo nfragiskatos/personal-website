@@ -10,21 +10,22 @@ interface MyRoutes {
   resume: MyRoute;
 }
 
+const prefix = "/personal-website"
 export const routes: MyRoutes = {
   home: {
-    path: "/",
+    path: prefix + "/",
     title: "home",
   },
   blog: {
-    path: "/blog",
+    path: prefix + "/blog",
     title: "blog",
   },
   projects: {
-    path: "/projects",
+    path: prefix + "/projects",
     title: "projects",
   },
   resume: {
-    path: "/resume",
+    path: prefix + "/resume",
     title: "resume",
   },
 };

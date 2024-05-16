@@ -55,7 +55,7 @@ const Navbar = () => {
 
       <TitleProfilePictureWrapper>
         <ProfilePictureWrapper>
-          <ProfilePicture src="/profile-picture.jpg" />
+          <ProfilePicture src="profile-picture.jpg" />
         </ProfilePictureWrapper>
         <NavTitle
           to={routes.home.path}
@@ -67,7 +67,6 @@ const Navbar = () => {
           Nicholas Fragiskatos
         </NavTitle>
       </TitleProfilePictureWrapper>
-      {/* <ThemeSwitcher /> */}
       <PagesList isHidden={isHidden}>
         <Page>
           <NavLink

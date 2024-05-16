@@ -1,7 +1,7 @@
 {
   "name": "personal-website",
   "version": "0.1.0",
-  "homepage": "https://nfragiskatos.github.io/personal-website",
+  "homepage": "https://www.nicholasfragiskatos.dev/",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.8.10",
