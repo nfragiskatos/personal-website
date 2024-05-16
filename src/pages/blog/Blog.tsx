@@ -65,7 +65,7 @@ const Blog = () => {
           </HashnodeLink>
         </HeroDetails>
       </HeroSection>
-      {!loading ? <LoadingContainer>
+      {loading ? <LoadingContainer>
         <LoadingDots size={128} />
       </LoadingContainer> :
         <Content>

@@ -13,6 +13,7 @@ export const BlogSection = styled.div`
 
     @media ${({ theme }) => theme.device.lg} {
         flex-direction: column;
+        gap: 2rem;
       }
 `;
 

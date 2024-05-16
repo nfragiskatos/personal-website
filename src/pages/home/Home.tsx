@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Blog from "./blog/Blog";
+import Experience from "./experience/Experience";
 import Hero from "./hero/Hero";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <Fragment>
       <Hero />
       <Blog />
+      <Experience />
     </Fragment>
   );
 };
