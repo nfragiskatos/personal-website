@@ -9,8 +9,8 @@ export const ExperienceSection = styled.div`
     gap: 10rem;
     flex-direction: row;
     background: ${({ theme }) => theme.colors.surfaceVariant};
-    color: ${({ theme }) => theme.colors.onPrimary};
-    padding: 2rem;
+    color: ${({ theme }) => theme.colors.onPrimaryContainer};
+    padding: 6rem 2rem 6rem 2rem;
 
     @media ${({ theme }) => theme.device.lg} {
         flex-direction: column;
@@ -26,7 +26,7 @@ export const ExperienceDetails = styled.div`
   line-height: 1.6;
   max-width: 60rem;
   border-radius: 50px 15px;
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primaryContainer};
 
   @media ${({ theme }) => theme.device.lg} {
         align-self: center;
@@ -35,7 +35,7 @@ export const ExperienceDetails = styled.div`
 
 export const ResumePageLink = styled(Link)`
 text-decoration: none;
-color: ${({ theme }) => theme.colors.onTertiary};
+color: ${({ theme }) => theme.colors.tertiary};
 `;
 
 export const ExperienceChips = styled.div`

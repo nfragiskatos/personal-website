@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const BlogSection = styled.div`
+export const ProjectSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ export const BlogSection = styled.div`
       }
 `;
 
-export const BlogDetails = styled.div`
+export const ProjectDetails = styled.div`
   font-size: 2.2rem;
   padding: 2.5rem;
   text-align: start;
@@ -25,7 +25,7 @@ export const BlogDetails = styled.div`
   line-height: 1.6;
   max-width: 60rem;
   border-radius: 15px 50px;
-  align-self: start;
+  align-self: center;
   background: ${({ theme }) => theme.colors.surfaceVariant};
 
   @media ${({ theme }) => theme.device.lg} {
@@ -33,14 +33,7 @@ export const BlogDetails = styled.div`
       }
 `;
 
-export const BlogPageLink = styled(Link)`
+export const ProjectPageLink = styled(Link)`
 text-decoration: none;
 color: ${({ theme }) => theme.colors.tertiary};
-`;
-
-export const LoadingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.primary};
 `;
