@@ -36,3 +36,10 @@ export const BlogPageLink = styled(Link)`
 text-decoration: none;
 color: ${({ theme }) => theme.colors.tertiary};
 `;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.primary};
+`;

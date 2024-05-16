@@ -85,3 +85,18 @@ export const HashnodeLink = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.tertiary};
 `;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 8rem;
+`;
+
+export const LoadingMessage = styled.div`
+  font-size: 4rem;
+  text-align: center;
+  margin-right: 1rem;
+`;

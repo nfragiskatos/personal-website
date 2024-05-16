@@ -1,12 +1,14 @@
 import { gql, useQuery } from "@apollo/client";
 import { FetchPublicationData } from "../../hashnode/interfaces";
+import LoadingDots from "../../utils/components/LoadingDots";
 import {
   Content,
   HashnodeLink,
   HeroDetails,
   HeroSection,
   HeroTitle,
-  Main,
+  LoadingContainer,
+  Main
 } from "./Blog.styles";
 import BlogPost from "./post/BlogPost";
 
@@ -40,10 +42,7 @@ const BLOG_QUERY = gql`
 const Blog = () => {
   const { data, loading, error } = useQuery<FetchPublicationData>(BLOG_QUERY);
 
-  if (loading) return <p>"Loading..."</p>;
   if (error) return <pre>{error.message}</pre>;
-
-  console.log(data);
 
   return (
     <Main>
@@ -56,6 +55,7 @@ const Blog = () => {
           time writing educational articles about various software engineering
           topics on my blog.
           <br />
+          <br />
           The full blog is hosted{" "}
           <HashnodeLink
             href="https://blog.nicholasfragiskatos.dev/"
@@ -65,11 +65,14 @@ const Blog = () => {
           </HashnodeLink>
         </HeroDetails>
       </HeroSection>
-      <Content>
-        {data?.publication?.posts?.edges.map((e) => {
-          return <BlogPost key={e.node.id} post={e.node} />;
-        })}
-      </Content>
+      {!loading ? <LoadingContainer>
+        <LoadingDots size={128} />
+      </LoadingContainer> :
+        <Content>
+          {data?.publication?.posts?.edges.map((e) => {
+            return <BlogPost key={e.node.id} post={e.node} />;
+          })}
+        </Content>}
     </Main>
   );
 };

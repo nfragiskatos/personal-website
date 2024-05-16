@@ -1,8 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 import { FetchPublicationData } from "../../../hashnode/interfaces";
+import LoadingDots from "../../../utils/components/LoadingDots";
 import { routes } from "../../../utils/routes";
 import BlogPost from "../../blog/post/BlogPost";
-import { BlogDetails, BlogPageLink, BlogSection } from "./Blog.styles";
+import { BlogDetails, BlogPageLink, BlogSection, LoadingContainer } from "./Blog.styles";
 
 const BLOG_QUERY = gql`
   {
@@ -58,9 +59,16 @@ const Blog = () => {
                     here
                 </BlogPageLink>.
             </BlogDetails>
-            {data?.publication?.posts?.edges.map((e) => {
-                return <BlogPost key={e.node.id} post={e.node} />;
-            })}
+            {loading ?
+                <LoadingContainer>
+                    <LoadingDots size={128} />
+                </LoadingContainer> :
+                <div>
+                    {data?.publication?.posts?.edges.map((e) => {
+                        return <BlogPost key={e.node.id} post={e.node} />;
+                    })}
+                </div>
+            }
         </BlogSection>
     )
 }
