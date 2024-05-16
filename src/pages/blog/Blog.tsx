@@ -66,8 +66,6 @@ const Blog = () => {
         </HeroDetails>
       </HeroSection>
       <Content>
-        {/* <p>{JSON.stringify(data)}</p>
-      <h1>I'm on the blog page</h1> */}
         {data?.publication?.posts?.edges.map((e) => {
           return <BlogPost key={e.node.id} post={e.node} />;
         })}

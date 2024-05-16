@@ -127,7 +127,7 @@ export const HeroTitle = styled.h1`
   font-size: 6rem;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 800;
+  font-weight: normal;
   margin: 0;
   @media ${({ theme }) => theme.device.md} {
     font-size: 5rem;
@@ -139,7 +139,7 @@ export const HeroSubtitle = styled.h2`
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
-  font-weight: normal;
+  font-weight: lighter;
   margin: 0;
   @media ${({ theme }) => theme.device.lg} {
     font-size: 3rem;
