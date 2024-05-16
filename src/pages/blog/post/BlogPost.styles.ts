@@ -21,8 +21,6 @@ export const ImageLinkWrapper = styled.a`
   width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
-  //   background: ${({ theme }) => theme.colors.tertiary};
-  //   box-shadow: ${({ theme }) => theme.colors.shadow} 4px 8px 16px 4px;
 
   @media ${({ theme }) => theme.device.lg} {
     max-width: 20rem;

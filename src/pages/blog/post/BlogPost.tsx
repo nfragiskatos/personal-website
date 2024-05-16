@@ -43,21 +43,9 @@ const BlogPost = ({ post }: BlogPostProps) => {
       </DetailsWrapper>
       <ButtonLine>
         <ReadButton>
-          {/* <ReadIcon /> */}
           read
         </ReadButton>
       </ButtonLine>
-
-      {/* <div
-        className="primary"
-        style={{
-          height: "200px",
-          width: "200px",
-          margin: "16px",
-        }}
-      >
-        {`${post.id}, ${post.title}, ${post.brief}, ${post.url},`}
-      </div> */}
     </Wrapper>
   );
 };
