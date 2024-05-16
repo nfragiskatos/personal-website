@@ -7,9 +7,11 @@ import {
   HeroProfilePicture,
   HeroProfilePictureWrapper,
   HeroSection,
+  HeroSubtitle,
   HeroTitle,
   LinkedInIcon,
   SocialLinks,
+  TempBackgroundImg,
 } from "./Hero.styles";
 
 const Hero = () => {
@@ -43,15 +45,17 @@ const Hero = () => {
           <HeroProfilePicture src="profile-picture.jpg" />
         </HeroProfilePictureWrapper>
         <HeroInfo>
-          <HeroTitle>This is Nicholas Fragiskatos</HeroTitle>
+          <HeroTitle>Hi, I'm Nicholas Fragiskatos</HeroTitle>
+          <HeroSubtitle>Software Engineer | Learner | Tinkerer</HeroSubtitle>
           <HeroDetails>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
-            eveniet error quod quidem necessitatibus quo temporibus molestiae
-            velit. Minima eum quam sit? Voluptate illo, voluptatibus ad eligendi
-            animi illum fugiat!
+            I'm a software engineer who mainly focuses on full stack and Android
+            development. However, I can help build software products with
+            whatever language, framework, library, design pattern, methodology,
+            etc. is necessary for the best project outcome.
           </HeroDetails>
         </HeroInfo>
       </HeroContent>
+      <TempBackgroundImg />
     </HeroSection>
   );
 };

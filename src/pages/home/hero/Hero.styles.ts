@@ -10,13 +10,17 @@ export const HeroSection = styled.section`
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
-  background: ${({ theme }) => `
+  // background: ${({ theme }) => `
   linear-gradient(to right, ${theme.colors.inversePrimary}CC, ${theme.colors.tertiaryContainer}CC), url(hero-background.svg);
   `}
-  background-position: center;
+  background: ${({ theme }) => `
+  linear-gradient(to right, ${theme.colors.inversePrimary}CC, ${theme.colors.tertiaryContainer}CC);
+  `}
+  // background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 `;
 
 export const HeroImage = styled.img`
@@ -38,6 +42,7 @@ export const SocialLinks = styled.aside`
   box-shadow: ${({ theme }) => theme.colors.shadow} 4px 8px 16px 0px;
   transition: none;
   transform: translate(0, -50%);
+  z-index: 500;
 
   @media (max-width: 1700px) {
     flex-direction: row;
@@ -93,6 +98,7 @@ export const HeroContent = styled.div`
   @media ${({ theme }) => theme.device.lg} {
     flex-direction: column;
   }
+  z-index: 2;
 `;
 
 export const HeroProfilePictureWrapper = styled.div`
@@ -126,15 +132,23 @@ export const HeroTitle = styled.h1`
   @media ${({ theme }) => theme.device.md} {
     font-size: 5rem;
   }
+  // color: ${({ theme }) => theme.colors.onPrimaryContainer};
+`;
 
-  // @media ${({ theme }) => theme.device.sm} {
-  //   font-size: 4rem;
-  // }
+export const HeroSubtitle = styled.h2`
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  @media ${({ theme }) => theme.device.lg} {
+    font-size: 3rem;
+  }
 `;
 
 export const HeroDetails = styled.p`
   margin: 2.5rem auto 0px;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   text-align: center;
   width: 100%;
   line-height: 1.6;
@@ -142,10 +156,7 @@ export const HeroDetails = styled.p`
   @media ${({ theme }) => theme.device.md} {
     font-size: 2rem;
   }
-
-  // @media ${({ theme }) => theme.device.sm} {
-  //   font-size: 1.5rem;
-  // }
+  z-index: 2;
 `;
 
 export const HeroInfo = styled.div`
@@ -155,4 +166,15 @@ export const HeroInfo = styled.div`
   justify-content: center;
   align-items: center;
   color: ${({ theme }) => theme.colors.onSurface};
+`;
+
+export const TempBackgroundImg = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: ${({ theme }) => `
+  linear-gradient(to right, ${theme.colors.inversePrimary}CC, ${theme.colors.tertiaryContainer}CC), url(hero-background.svg);
+  `};
+  opacity: 0.5;
+  background-position: center;
 `;

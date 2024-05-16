@@ -25,6 +25,7 @@ const SkillsAndKnowledge = () => {
           <Chip>Kotlin</Chip>
           <Chip>HTML</Chip>
           <Chip>CSS</Chip>
+          <Chip>Ruby</Chip>
         </InfoCell>
         <TitleCell>Frameworks and Libraries:</TitleCell>
         <InfoCell>
@@ -33,6 +34,18 @@ const SkillsAndKnowledge = () => {
             color={theme.colors.onSecondary}
           >
             React (w/ Hooks)
+          </Chip>
+          <Chip
+            backgroundColor={theme.colors.secondary}
+            color={theme.colors.onSecondary}
+          >
+            Next.js
+          </Chip>
+          <Chip
+            backgroundColor={theme.colors.secondary}
+            color={theme.colors.onSecondary}
+          >
+            Ruby on Rails
           </Chip>
           <Chip
             backgroundColor={theme.colors.secondary}
@@ -61,6 +74,7 @@ const SkillsAndKnowledge = () => {
         </InfoCell>
         <TitleCell>Other Experience:</TitleCell>
         <InfoCell>
+          <Chip>TailwindCSS</Chip>
           <Chip>C#</Chip>
           <Chip>C</Chip>
           <Chip>C++</Chip>
@@ -70,10 +84,15 @@ const SkillsAndKnowledge = () => {
           <Chip>JCL</Chip>
           <Chip>PL/X</Chip>
           <Chip>REXX</Chip>
-          <Chip>Assembler for z/Architecture</Chip>
         </InfoCell>
         <TitleCell>Tooling:</TitleCell>
         <InfoCell>
+          <Chip
+            backgroundColor={theme.colors.secondary}
+            color={theme.colors.onSecondary}
+          >
+            Docker
+          </Chip>
           <Chip
             backgroundColor={theme.colors.secondary}
             color={theme.colors.onSecondary}
@@ -91,6 +110,12 @@ const SkillsAndKnowledge = () => {
             color={theme.colors.onSecondary}
           >
             Oracle Database
+          </Chip>
+          <Chip
+            backgroundColor={theme.colors.secondary}
+            color={theme.colors.onSecondary}
+          >
+            Linear
           </Chip>
           <Chip
             backgroundColor={theme.colors.secondary}
