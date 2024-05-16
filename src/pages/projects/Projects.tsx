@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import BottleBuddy from "./project/BottleBuddy";
 import ComfySloth from "./project/ComfySloth";
 import FragMessenger from "./project/FragMessenger";
@@ -5,6 +6,11 @@ import GitHubDashboard from "./project/GitHubDashboard";
 import { Content, GitHubLink, HeroDetails, HeroSection, HeroTitle, Main } from "./Projects.styles";
 
 const Projects = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return <Main>
     <HeroSection>
       <HeroTitle>Tinkering</HeroTitle>

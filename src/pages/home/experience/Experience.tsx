@@ -5,7 +5,7 @@ const Experience = () => {
     return (
         <ExperienceSection>
             <ChipContainer>
-                <ChipTitle>Experience with...</ChipTitle>
+                <ChipTitle>Experience with</ChipTitle>
                 <ExperienceChips>
                     <Chip>JavaScript</Chip>
                     <Chip>JSX</Chip>
