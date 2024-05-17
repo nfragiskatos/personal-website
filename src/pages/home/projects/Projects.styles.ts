@@ -30,7 +30,11 @@ export const ProjectDetails = styled.div`
 
   @media ${({ theme }) => theme.device.lg} {
         align-self: center;
-      }
+  }
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ProjectPageLink = styled(Link)`

@@ -14,6 +14,13 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem 5rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const InfoCell = styled.div`
@@ -31,6 +38,10 @@ export const TitleCell = styled.div`
   justify-content: start;
   align-items: center;
   color: ${({ theme }) => theme.colors.onSurface};
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 interface ChipProps {
@@ -48,4 +59,8 @@ export const Chip = styled.div<ChipProps>`
   color: ${({ theme, color }) => color || theme.colors.onPrimary};
   border-radius: 5px;
   font-weight: 600;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 1rem;
+  }
 `;

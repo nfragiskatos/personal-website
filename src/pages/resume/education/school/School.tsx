@@ -1,5 +1,6 @@
 import {
   DegreeAndMajor,
+  EdWrapper,
   GraduationDate,
   Institution,
   Line,
@@ -20,15 +21,10 @@ const School = ({
 }: SchoolProps) => {
   return (
     <Line>
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-        }}
-      >
+      <EdWrapper>
         <DegreeAndMajor>{`${degree} - ${major},`}</DegreeAndMajor>
         <Institution>{institution}</Institution>
-      </div>
+      </EdWrapper>
       <GraduationDate>{graduationDate}</GraduationDate>
     </Line>
   );

@@ -10,57 +10,48 @@ export const Main = styled.main`
 `;
 
 export const Content = styled.article`
-  width: max-content;
+  width: fit-content;
   height: 100%;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 4rem;
   row-gap: 4rem;
-  //   grid-auto-rows: 1fr;
   justify-items: center;
   align-items: start;
 
-  //   max-width: 100rem;
 
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-
+  @media ${({ theme }) => theme.device.lg} {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+  }
   @media ${({ theme }) => theme.device.md} {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
   }
 `;
 
 export const HeroSection = styled.section`
   position: relative;
-  // margin-bottom: 2em;
-  // clear: both;
-  // animation: intro 0.3s both;
-  // animation-delay: 0.25s;
-  // height: 100vh;
-  // min-height: 80rem;
-  // max-height: 120rem;
-  // background: ${({ theme }) => `
-  linear-gradient(to right, ${theme.colors.primary}CC, ${theme.colors.tertiary}CC);
-  `}
-  // background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  // background: ${({ theme }) => theme.colors.surfaceTint};
   color: ${({ theme }) => theme.colors.onSurface};
 
   display: flex;
   flex-direction: column;
-  // padding: 0 12rem 5rem 12rem;
   padding-bottom: 5rem;
   padding-left: 4rem;
   padding-right: 4rem;
   margin-bottom: 2rem;
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-bottom: 3rem;
+    padding-bottom: 0;
+  }
 `;
 
 export const HeroDetails = styled.div`
@@ -69,6 +60,9 @@ export const HeroDetails = styled.div`
   width: 100%;
   line-height: 1.6;
   max-width: 90rem;
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const HeroTitle = styled.h1`
@@ -79,6 +73,10 @@ export const HeroTitle = styled.h1`
   text-transform: capitalize;
   text-transform: uppercase;
   margin: 2rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 3.5rem;
+  }
 `;
 
 export const HashnodeLink = styled.a`

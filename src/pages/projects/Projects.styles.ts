@@ -32,6 +32,10 @@ export const HeroDetails = styled.div`
   width: 100%;
   line-height: 1.6;
   max-width: 90rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const HeroTitle = styled.h1`
@@ -42,6 +46,10 @@ export const HeroTitle = styled.h1`
   text-transform: capitalize;
   text-transform: uppercase;
   margin: 2rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 3.5rem;
+  }
 `;
 
 export const GitHubLink = styled.a`

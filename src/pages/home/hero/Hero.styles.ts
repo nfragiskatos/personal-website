@@ -10,13 +10,10 @@ export const HeroSection = styled.section`
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
-  // background: ${({ theme }) => `
-  linear-gradient(to right, ${theme.colors.inversePrimary}CC, ${theme.colors.tertiaryContainer}CC), url(hero-background.svg);
-  `}
+  width: 100%;
   background: ${({ theme }) => `
   linear-gradient(to right, ${theme.colors.inversePrimary}CC, ${theme.colors.tertiaryContainer}CC);
   `}
-  // background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +129,9 @@ export const HeroTitle = styled.h1`
   @media ${({ theme }) => theme.device.md} {
     font-size: 5rem;
   }
-  // color: ${({ theme }) => theme.colors.onPrimaryContainer};
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 3.5rem;
+  }
 `;
 
 export const HeroSubtitle = styled.h2`
@@ -143,6 +142,9 @@ export const HeroSubtitle = styled.h2`
   margin: 0;
   @media ${({ theme }) => theme.device.lg} {
     font-size: 3rem;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
   }
 `;
 
@@ -155,6 +157,10 @@ export const HeroDetails = styled.p`
 
   @media ${({ theme }) => theme.device.md} {
     font-size: 2rem;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    margin-top: 1rem;
+    font-size: 1.5rem;
   }
   z-index: 2;
 `;

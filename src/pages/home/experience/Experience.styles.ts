@@ -30,7 +30,11 @@ export const ExperienceDetails = styled.div`
 
   @media ${({ theme }) => theme.device.lg} {
         align-self: center;
-      }
+  }
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ResumePageLink = styled(Link)`
@@ -56,6 +60,10 @@ export const Chip = styled.div`
   color: ${({ theme, color }) => color || theme.colors.onPrimary};
   border-radius: 5px;
   font-weight: 600;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const ChipTitle = styled.h1`
@@ -67,6 +75,12 @@ export const ChipTitle = styled.h1`
   text-transform: uppercase;
   margin: 2rem;
   width: 100%;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 3.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 `;
 
 export const ChipContainer = styled.div`
@@ -75,4 +89,8 @@ export const ChipContainer = styled.div`
     flex-direction: column;
     align-items: center;
     align-self: start;
+
+    @media ${({ theme }) => theme.device.lg} {
+      align-self: center;
+    }
 `;

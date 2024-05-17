@@ -7,6 +7,12 @@ export const Line = styled.div`
   width: 100%;
   margin: 1rem;
   color: ${({ theme }) => theme.colors.onSurface};
+
+  @media ${({ theme }) => theme.device.sm} {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
 `;
 
 export const Publisher = styled.div`

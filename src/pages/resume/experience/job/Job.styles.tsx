@@ -11,18 +11,32 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.onSurface};
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const Line = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: end;
+
+  @media ${({ theme }) => theme.device.sm} {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 
 export const Title = styled.div`
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: bold;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const Date = styled.div`
@@ -36,6 +50,10 @@ export const Company = styled.div`
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: bolder;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-weight: normal;
+  }
 `;
 
 export const Location = styled.div`

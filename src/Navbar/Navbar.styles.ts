@@ -18,7 +18,7 @@ export const Nav = styled.nav<NavProps>`
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 100vw;
   transition: top 0.3s;
   z-index: 1;
 

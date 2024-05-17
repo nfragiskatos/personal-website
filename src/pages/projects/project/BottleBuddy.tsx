@@ -30,7 +30,7 @@ const BottleBuddy = () => {
 
                 </Description>
             </DetailsContainer>
-            <ProjectImage src="https://github.com/nfragiskatos/BottleBuddy/blob/main/list_screen_dark_mode.png?raw=true" style={{ marginRight: "1rem" }} alt="home screen in dark mode" />
+            <ProjectImage margin src="https://github.com/nfragiskatos/BottleBuddy/blob/main/list_screen_dark_mode.png?raw=true" alt="home screen in dark mode" />
             <ProjectImage src="https://github.com/nfragiskatos/BottleBuddy/blob/main/edit_screen_light_mode.png?raw=true" alt="edit screen in dark mode" />
         </Main>
     )

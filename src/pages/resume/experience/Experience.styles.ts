@@ -9,14 +9,13 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  // width: 100%;
   max-width: 100rem;
-  //   margin: 1rem;
-  //   display: grid;
-  //   grid-template-columns: 1fr 2fr;
-  //   gap: 1rem 5rem;
 `;
 
 export const JobDetails = styled.ul`
   font-size: 1.5rem;
+  
+  @media ${({ theme }) => theme.device.sm} {
+    padding-left: 1rem;
+  }
 `;

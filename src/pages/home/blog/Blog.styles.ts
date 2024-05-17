@@ -30,7 +30,11 @@ export const BlogDetails = styled.div`
 
   @media ${({ theme }) => theme.device.lg} {
         align-self: center;
-      }
+  }
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const BlogPageLink = styled(Link)`

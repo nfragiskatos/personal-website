@@ -23,6 +23,10 @@ export const Title = styled.div`
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: bold;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 2rem;
+  }
 `;
 
 export const Link = styled.a`
@@ -44,4 +48,8 @@ export const Location = styled.div`
 
 export const ProjectDetails = styled.ul`
   font-size: 1.5rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    padding-left: 1rem;
+  }
 `;

@@ -26,7 +26,7 @@ const FragMessenger = () => {
 
                 </Description>
             </DetailsContainer>
-            <ProjectImage src="https://raw.githubusercontent.com/nfragiskatos/FragMessenger/master/screenshots/latest_messages.png" style={{ marginRight: "1rem" }} alt="home screen in dark mode" />
+            <ProjectImage margin src="https://raw.githubusercontent.com/nfragiskatos/FragMessenger/master/screenshots/latest_messages.png" alt="home screen in dark mode" />
             <ProjectImage src="https://raw.githubusercontent.com/nfragiskatos/FragMessenger/master/screenshots/chat_log_hermione.png" alt="edit screen in dark mode" />
         </Main>
     )

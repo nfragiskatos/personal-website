@@ -7,6 +7,21 @@ export const Line = styled.div`
   width: 100%;
   margin: 1rem;
   color: ${({ theme }) => theme.colors.onSurface};
+
+  @media ${({ theme }) => theme.device.sm} {
+    flex-direction: column;
+    align-items: start;
+  }
+  
+`;
+
+export const EdWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    flex-direction: column;
+  }
 `;
 
 export const DegreeAndMajor = styled.div`

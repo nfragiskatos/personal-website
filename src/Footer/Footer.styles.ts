@@ -2,7 +2,7 @@ import { FaBlog, FaGithub, FaLinkedin } from "react-icons/fa6";
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
-  width: 100%;
+  width: 100vw;
   min-height: 300px;
   background-color: ${({ theme }) => theme.colors.primaryContainer};
   display: flex;

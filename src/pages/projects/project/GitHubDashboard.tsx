@@ -3,7 +3,6 @@ import { Description, DetailsContainer, GithubIcon, Main, ProjectImage, Title } 
 const GitHubDashboard = () => {
     return (
         <Main>
-            <ProjectImage width="45%" height="45%" altWidth="76%" src="https://user-images.githubusercontent.com/38383279/124360479-ec61ff00-dbde-11eb-8f69-b509ee0f9b55.PNG" alt="galler view for storefront" />
             <DetailsContainer>
                 <Title>GitHub Dashboard
                     <a
@@ -14,6 +13,7 @@ const GitHubDashboard = () => {
                     </a>
 
                 </Title>
+                <ProjectImage width="45%" height="45%" altWidth="76%" src="https://user-images.githubusercontent.com/38383279/124360479-ec61ff00-dbde-11eb-8f69-b509ee0f9b55.PNG" alt="galler view for storefront" />
                 <Description>
                     A dashboard for GitHub where you can search users to see various statistics about their activity on GitHub.
                     <br />

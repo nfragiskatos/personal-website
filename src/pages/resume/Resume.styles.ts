@@ -18,4 +18,8 @@ export const Title = styled.h1`
   text-transform: capitalize;
   text-transform: uppercase;
   margin: 2rem;
+
+  @media ${({ theme }) => theme.device.sm} {
+    font-size: 3.5rem;
+  }
 `;

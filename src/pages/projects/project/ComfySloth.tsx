@@ -3,7 +3,6 @@ import { Description, DetailsContainer, GithubIcon, Main, ProjectImage, Title } 
 const ComfySloth = () => {
     return (
         <Main>
-            <ProjectImage width="40%" height="40%" altWidth="76%" src="https://user-images.githubusercontent.com/38383279/124523243-28e25600-ddab-11eb-926b-761878b8c0a4.png" alt="galler view for storefront" />
             <DetailsContainer>
                 <Title>Comfy Sloth
                     <a
@@ -14,6 +13,7 @@ const ComfySloth = () => {
                     </a>
 
                 </Title>
+                <ProjectImage width="40%" height="40%" altWidth="76%" src="https://user-images.githubusercontent.com/38383279/124523243-28e25600-ddab-11eb-926b-761878b8c0a4.png" alt="galler view for storefront" />
                 <Description>
                     A storefront for a furniture store
                     <br />
