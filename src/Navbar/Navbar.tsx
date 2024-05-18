@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const prevScrollPosition = useRef(window.scrollY);
   const [height, setHeight] = useState(0.0);
-  const [isHidden, setIsHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
   const ref = useRef<HTMLElement>(null);
 
   const stickNavbar = () => {
@@ -47,11 +47,7 @@ const Navbar = () => {
 
   return (
     <Nav isSticky={isSticky} navHeight={height} ref={ref}>
-      {isHidden ? (
-        <HamburgerMenu onClick={toggleMenuVisibility} />
-      ) : (
-        <CloseMenu onClick={toggleMenuVisibility} />
-      )}
+
 
       <TitleProfilePictureWrapper>
         <ProfilePictureWrapper>
@@ -71,6 +67,7 @@ const Navbar = () => {
         <Page>
           <NavLink
             to={routes.home.path}
+            onClick={toggleMenuVisibility}
             className="title-large"
             isActive={location.pathname === routes.home.path}
           >
@@ -80,6 +77,7 @@ const Navbar = () => {
         <Page>
           <NavLink
             to={routes.blog.path}
+            onClick={toggleMenuVisibility}
             className="title-large"
             isActive={location.pathname === routes.blog.path}
           >
@@ -88,6 +86,7 @@ const Navbar = () => {
         </Page>
         <Page>
           <NavLink
+            onClick={toggleMenuVisibility}
             to={routes.projects.path}
             className="title-large"
             isActive={location.pathname === routes.projects.path}
@@ -98,6 +97,7 @@ const Navbar = () => {
         <Page>
           <NavLink
             to={routes.resume.path}
+            onClick={toggleMenuVisibility}
             className="title-large"
             isActive={location.pathname === routes.resume.path}
           >
@@ -108,6 +108,11 @@ const Navbar = () => {
           <ThemeSwitcher />
         </Page>
       </PagesList>
+      {isHidden ? (
+        <HamburgerMenu onClick={toggleMenuVisibility} />
+      ) : (
+        <CloseMenu onClick={toggleMenuVisibility} />
+      )}
     </Nav>
   );
 };

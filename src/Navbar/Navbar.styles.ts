@@ -158,14 +158,12 @@ export const TitleProfilePictureWrapper = styled.div`
 
 export const HamburgerMenu = styled(GiHamburgerMenu)`
   display: none;
-  position: absolute;
   height: 4rem;
   width: 4rem;
-  top: 2rem;
-  right: 2rem;
   z-index: 9999;
   color: ${({ theme }) => theme.colors.tertiary};
   cursor: pointer;
+  align-self: center;
 
   @media (max-width: 1100px) {
     display: block;
@@ -174,14 +172,12 @@ export const HamburgerMenu = styled(GiHamburgerMenu)`
 
 export const CloseMenu = styled(IoClose)`
   display: none;
-  position: absolute;
   height: 4rem;
   width: 4rem;
-  top: 2rem;
-  right: 2rem;
   z-index: 9999;
   color: ${({ theme }) => theme.colors.tertiary};
   cursor: pointer;
+  align-self: center;
 
   @media (max-width: 1100px) {
     display: block;
