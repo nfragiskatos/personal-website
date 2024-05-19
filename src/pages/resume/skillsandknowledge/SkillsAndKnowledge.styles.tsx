@@ -49,7 +49,9 @@ interface ChipProps {
   backgroundColor?: string;
 }
 
-export const Chip = styled.div<ChipProps>`
+export const Chip = styled('div').withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) => !['color', 'backgroundColor'].includes(prop)
+}) <ChipProps>`
   padding: 0.7rem;
   margin-bottom: 1rem;
   margin-right: 1rem;

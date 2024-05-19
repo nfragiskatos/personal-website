@@ -8,7 +8,9 @@ interface NavProps {
   navHeight: number;
 }
 
-export const Nav = styled.nav<NavProps>`
+export const Nav = styled('nav').withConfig({
+  shouldForwardProp: (prop) => !['isSticky', 'navHeight'].includes(prop),
+})<NavProps>`
   background-color: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.onSurface};
   display: flex;
@@ -27,13 +29,15 @@ export const Nav = styled.nav<NavProps>`
     `
         top: -${navHeight}px;
     `}
-`;
+`;  
 
 interface PageListProps {
   isHidden: boolean;
 }
 
-export const PagesList = styled.ul<PageListProps>`
+export const PagesList = styled('ul').withConfig({
+  shouldForwardProp: (prop) => !['isHidden'].includes(prop),
+})<PageListProps>`
   padding: 0;
   margin: 0;
   list-style: none;
@@ -60,11 +64,7 @@ export const PagesList = styled.ul<PageListProps>`
   }
 `;
 
-interface PageProps {
-  isActive?: boolean;
-}
-
-export const Page = styled.li<PageProps>`
+export const Page = styled.li`
   padding: 1rem;
   width: max-content;
 `;
@@ -91,7 +91,9 @@ interface NavLinkProps {
   isActive?: boolean;
 }
 
-export const NavLink = styled(Link)<NavLinkProps>`
+export const NavLink = styled(Link).withConfig({
+  shouldForwardProp: (prop) => !['isActive'].includes(prop),
+})<NavLinkProps>`
   color: inherit;
   height: 100%;
   display: flex;

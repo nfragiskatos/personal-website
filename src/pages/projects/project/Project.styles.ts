@@ -70,7 +70,9 @@ interface ProjectImageProps {
     margin?: boolean
 }
 
-export const ProjectImage = styled.img<ProjectImageProps>`
+export const ProjectImage = styled('img').withConfig({
+  shouldForwardProp: (prop) => !['width', 'height', 'margin', 'altWidth', 'altHeight'].includes(prop),
+}) <ProjectImageProps>`
   width: ${({ width }) => width ? width : "15%"};
   height: ${({ height }) => height ? height : "15%"};
   margin-right: ${({ margin }) => margin ? "1rem" : "0"};
@@ -88,6 +90,25 @@ export const ProjectImage = styled.img<ProjectImageProps>`
   }
   
 `;
+
+// export const ProjectImage = styled.img<ProjectImageProps>`
+//   width: ${({ width }) => width ? width : "15%"};
+//   height: ${({ height }) => height ? height : "15%"};
+//   margin-right: ${({ margin }) => margin ? "1rem" : "0"};
+
+//   @media ${({ theme }) => theme.device.md} {
+//     width: ${({ altWidth }) => altWidth ? altWidth : "25%"};
+//     height: ${({ altHeight }) => altHeight ? altHeight : "25%"};
+//     margin-bottom: 1rem;
+//   }
+
+//   @media ${({ theme }) => theme.device.sm} {
+//     margin-bottom: 1rem;
+//     margin-top: 1rem;
+//     margin-right: 0;
+//   }
+  
+// `;
 
 export const GithubIcon = styled(FaGithub)`
   color: ${({ theme }) => theme.colors.onSurfaceVariant};
